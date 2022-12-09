@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leeftijdstester</title>
+    <script>
+        function alcoholTester() {
+            let input = document.getElementById("invoer").value;
+            let leeftijd = parseInt(input);
+            if (Number.isInteger(leeftijd)) {
+                if (leeftijd < 16) {
+                    document.getElementById("resultaat").innerHTML = "Cola voor jou";
+                    document.getElementById("resultaat").style.backgroundColor = 'red';
+                } else if (leeftijd < 18) {
+                    document.getElementById("resultaat").innerHTML = "Een biertje mag";
+                    document.getElementById("resultaat").style.backgroundColor = 'yellow';
+                } else {
+                    document.getElementById("resultaat").innerHTML = "Aan de vodka";
+                    document.getElementById("resultaat").style.backgroundColor = 'green';
+                }
+            } else {
+                document.getElementById("resultaat").innerHTML = "Voer een cijfer in";
+            }
+        };
+    </script>
+</head>
+<body>
+    <p>Hoe oud ben je?<br></p>
+    <input id="invoer"><button onclick="alcoholTester()">Verzend</button>
+    <div id="resultaat"></div>
+</body>
+</html>
